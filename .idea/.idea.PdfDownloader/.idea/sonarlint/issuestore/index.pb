@@ -22,3 +22,13 @@ EditMe.txt,c\4\c4ba0541c29d1236f427188a4f8b28e0b7dae112
 PdfGetter.csproj,1\8\18f80c1efb0f26de1405dfad9a68a832cbac557a
 A
 PdfDownloader.sln,3\f\3fbd8a079ead9cd5364672be17880b64af058112
+M
+DownloadedContentFiltering.cs,5\0\50f7810eb5249b8c6d50092a75581af4b63df6f8
+B
+DownloadReport.csv,9\9\99a860fa20d1071ce2e1770741bad2bd3e468749
+C
+DownloadReport.json,1\b\1b52231fb8fbec44376b292ff45aec6240ffcb70
+A
+DownloadRecord.cs,0\3\035dd7489030745a9f933edf079d96b64d816bfe
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

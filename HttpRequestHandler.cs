@@ -14,21 +14,28 @@ public static class HttpRequestHandler
             string filePath = Path.Combine(directoryPath, fileName);
 
             using (var client = new HttpClient())
-            using (var response = await client.GetAsync(url))
             {
-                int statusCode = (int)response.StatusCode;
-                if (!response.IsSuccessStatusCode)
-                {
-                    Console.WriteLine($"Failed to download {fileName} from {url}: {response.ReasonPhrase}");
-                    return statusCode;
-                }
+                // Set the user agent string
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.61 Safari/537.36");
 
-                await using (var contentStream = await response.Content.ReadAsStreamAsync())
-                await using (var fileStream = new FileStream(filePath, FileMode.Create))
+                using (var response = await client.GetAsync(url))
                 {
-                    await contentStream.CopyToAsync(fileStream, 81920); // Adjust buffer size as needed
+                    int statusCode = (int)response.StatusCode;
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine($"Failed to download {fileName} from {url}: {response.ReasonPhrase}");
+                        return statusCode;
+                    }
+
+                    await using (var contentStream = await response.Content.ReadAsStreamAsync())
+                    await using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await contentStream.CopyToAsync(fileStream, 81920); // Adjust buffer size as needed
+                    }
                 }
             }
+
             Console.WriteLine($"Downloaded {fileName} from {url}");
             return 200; // Return the actual HTTP status code for success
         }

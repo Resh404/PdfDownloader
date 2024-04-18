@@ -1,6 +1,0 @@
-﻿C:\Users\KOM\Downloads\GRI_2017_2020 (1).xlsx
-0
-
-// The first line of this file is the path to the main Excel document with the id and links in it.
-// The second line is the name of the Excel sheet. The name of the Excel sheet can be seen at the bottom of the Excel window.
-// The Excel window needs to be closed before you run this program
