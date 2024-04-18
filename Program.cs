@@ -26,7 +26,7 @@ var (ids, links1, links2) =
 // links2 = links2.Take(25).ToList();
 
 await PdfToDownload.DownloadPdfOrHtmlAsync(ids, links1, links2);
-// DownloadedContentFiltering.RemoveSmallFiles("./downloadedContent");
+DownloadedContentFiltering.RemoveSmallFiles("./downloadedContent");
 
 // Wait for user input before exiting
 Console.WriteLine("Press any key to exit...");
