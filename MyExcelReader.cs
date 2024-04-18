@@ -36,11 +36,6 @@ public static class MyExcelReader
                 pdfListIds.Add(pdfId);
                 pdfListLinks1.Add(pdfLink1);
                 pdfListLinks2.Add(pdfLink2);
-
-                // Display the values
-                // Console.WriteLine($"Value at row {row}, Column A: {pdfId}");
-                // Console.WriteLine($"Value at row {row}, Column AL: {pdfLink1}");
-                // Console.WriteLine($"Value at row {row}, Column AM: {pdfLink2}");
             }
         }
         else

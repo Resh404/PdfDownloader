@@ -25,6 +25,7 @@ public static class HttpRequestHandler
                     if (!response.IsSuccessStatusCode)
                     {
                         Console.WriteLine($"Failed to download {fileName} from {url}: {response.ReasonPhrase}");
+                        Console.WriteLine();
                         return statusCode;
                     }
 
@@ -37,11 +38,13 @@ public static class HttpRequestHandler
             }
 
             Console.WriteLine($"Downloaded {fileName} from {url}");
+            Console.WriteLine();
             return 200; // Return the actual HTTP status code for success
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Failed to download {fileName} from {url}: {ex.Message}");
+            Console.WriteLine();
             return 404; // Or another appropriate error status code
         }
     }

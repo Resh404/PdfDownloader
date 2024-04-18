@@ -22,14 +22,15 @@ public static class DownloadedContentFiltering
                 pdfName = file.Name.Split('_')[1];
                 pdfName = pdfName.Split('.')[0];
 
-                Console.WriteLine($"File '{file.Name}' removed from '{directoryPath}' (size: {file.Length} bytes).");
+                Console.WriteLine($"File '{file.Name}' removed from '{directoryPath}' reason: empty PDF(size: {file.Length} bytes).");
+                Console.WriteLine();
                 PdfDownloadStatusOverview.ReplaceDownloadInfoById(pdfName, "Not Downloaded", "No links working");
                 file.Delete();
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error removing small files: {ex.Message}");
+            Console.WriteLine($"Error removing empty PDF files: {ex.Message}");
         }
     }
 }

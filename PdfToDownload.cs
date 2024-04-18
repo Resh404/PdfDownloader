@@ -29,6 +29,7 @@ public static class PdfToDownload
         if (Utils.FileExistsInDownloadedContent(fileName))
         {
             Console.WriteLine($"File '{fileName}' already exists in downloadedContent. Skipping download.");
+            Console.WriteLine();
             downloadSuccess = 200; // Successfully "downloaded"
         }
         else

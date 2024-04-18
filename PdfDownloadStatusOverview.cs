@@ -45,10 +45,6 @@ namespace PdfGetter
                     return string.Equals(record.ID, idToReplace.Trim(), StringComparison.CurrentCultureIgnoreCase);
                 });
 
-                // Print the content of recordToUpdate
-                Console.WriteLine("Content of recordToUpdate:");
-                Console.WriteLine(recordToUpdate != null ? JsonConvert.SerializeObject(recordToUpdate, Formatting.Indented) : "Record not found.");
-
                 if (recordToUpdate != null)
                 {
                     // Update the download status and used link
@@ -57,10 +53,6 @@ namespace PdfGetter
 
                     // Serialize the updated records back to JSON
                     string json = JsonConvert.SerializeObject(records, Formatting.Indented);
-
-                    // Write the JSON back to the file
-                    File.WriteAllText(downloadStatusReportPath, json);
-                    Console.WriteLine($"Download status and used link for ID '{idToReplace}' replaced with '{newDownloadStatus}' and '{newUsedLink}'.");
                 }
                 else
                 {
