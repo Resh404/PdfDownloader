@@ -24,10 +24,6 @@ A
 PdfDownloader.sln,3\f\3fbd8a079ead9cd5364672be17880b64af058112
 M
 DownloadedContentFiltering.cs,5\0\50f7810eb5249b8c6d50092a75581af4b63df6f8
-B
-DownloadReport.csv,9\9\99a860fa20d1071ce2e1770741bad2bd3e468749
-C
-DownloadReport.json,1\b\1b52231fb8fbec44376b292ff45aec6240ffcb70
 A
 DownloadRecord.cs,0\3\035dd7489030745a9f933edf079d96b64d816bfe
 9

@@ -14,7 +14,7 @@ public static class DownloadedContentFiltering
             FileInfo[] files = directoryInfo.GetFiles();
 
             // Filter files smaller than 500 KB
-            IEnumerable<FileInfo> smallFiles = files.Where(file => file.Length < 500 * 1024);
+            IEnumerable<FileInfo> smallFiles = files.Where(file => file.Length < 2 * 1024);
 
             // Delete each small file
             foreach (FileInfo file in smallFiles)

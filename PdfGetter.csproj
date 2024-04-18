@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DinkToPdf" Version="1.0.8" />
       <PackageReference Include="EPPlus" Version="7.1.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
@@ -15,6 +16,7 @@
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="mkdir &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main&quot;&#xA;&#xA;echo C:\Users\KOM\Downloads\GRI_2017_2020 (1).xlsx &gt; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\EditMe.txt&quot;&#xA;echo 0 &gt;&gt; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\EditMe.txt&quot;&#xA;echo // The first line of this file is the path to the main Excel document with the id and links in it. &gt;&gt; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\EditMe.txt&quot;&#xA;echo // The second line is the name of the Excel sheet. The name of the Excel sheet can be seen at the bottom of the Excel window. &gt;&gt; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\EditMe.txt&quot;&#xA;echo // The Excel window needs to be closed before you run this program &gt;&gt; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\EditMe.txt&quot;&#xA;&#xA;mklink &quot;C:\Users\KOM\RiderProjects\PdfDownloader\main\PdfGetter.exe&quot; &quot;C:\Users\KOM\RiderProjects\PdfDownloader\bin\Release\net8.0\PdfGetter.exe&quot;&#xA;" />
     </Target>
+    
 
 
 

@@ -20,6 +20,7 @@ public static class HttpRequestHandler
 
                 using (var response = await client.GetAsync(url))
                 {
+                    var contentType = response.Content.Headers.ContentType;
                     int statusCode = (int)response.StatusCode;
 
                     if (!response.IsSuccessStatusCode)
@@ -27,6 +28,13 @@ public static class HttpRequestHandler
                         Console.WriteLine($"Failed to download {fileName} from {url}: {response.ReasonPhrase}");
                         Console.WriteLine();
                         return statusCode;
+                    }
+
+                    if (!contentType.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine($"Failed to download {fileName} from {url}: not a pdf file");
+                        Console.WriteLine();
+                        return 404;
                     }
 
                     await using (var contentStream = await response.Content.ReadAsStreamAsync())
