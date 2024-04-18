@@ -20,9 +20,9 @@ using (StreamReader reader = new StreamReader(filePathEditMe))
 var (ids, links1, links2) =
     MyExcelReader.ReadMyExcelFile(filePathMyExcelFile.Trim(), filePathExcelSheetName.Trim());
 
-ids = ids.Take(25).ToList();
-links1 = links1.Take(25).ToList();
-links2 = links2.Take(25).ToList();
+// ids = ids.Take(25).ToList();
+// links1 = links1.Take(25).ToList();
+// links2 = links2.Take(25).ToList();
 
 await PdfToDownload.DownloadPdfOrHtmlAsync(ids, links1, links2);
 DownloadedContentFiltering.RemoveSmallFiles("./downloadedContent");
