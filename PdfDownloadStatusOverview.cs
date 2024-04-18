@@ -41,7 +41,6 @@ namespace PdfGetter
                 // Find the record with the specified ID
                 var recordToUpdate = records.FirstOrDefault(record =>
                 {
-                    Console.WriteLine($"Comparing ID: '{record.ID}' with '{idToReplace}'");
                     return string.Equals(record.ID, idToReplace.Trim(), StringComparison.CurrentCultureIgnoreCase);
                 });
 
