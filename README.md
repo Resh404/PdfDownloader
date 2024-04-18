@@ -8,13 +8,11 @@
 * Unzip at a desired location
 * Open the folder PdfDownloader as a project in VS Code/rider or another IDE
 * Build the solution: Build -> Build solution
-* 
-```
-pip install -r requirements.txt
-```
-* Next, in the project folder menu go the script:
-"storageManagementDatabase -> database_connector.py" and edit it to fit your local MySQL server
-* Now go to "main.py" script in the project folder menu and run "main.py".
+* Go to the project root folder in file explorer
+* Navigate to the main folder
+* In the main folder, change the EditMe file to fit your specifications
+* Run the PdfGetter.exe as admin
+* After the program has executed, a report of the process is generated in json format
 
 ## Authors & Help
 
