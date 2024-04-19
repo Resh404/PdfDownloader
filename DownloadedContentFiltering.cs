@@ -3,23 +3,22 @@
 public static class DownloadedContentFiltering
 {
     // Method to remove files smaller than 500 KB from a directory
-    public static void RemoveSmallFiles(string directoryPath)
+    public static void RemoveEmptyPdfFiles(string directoryPath)
     {
         try
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
-            string pdfName;
 
             // Get all files in the directory
             FileInfo[] files = directoryInfo.GetFiles();
 
-            // Filter files smaller than 500 KB
+            // Filter files smaller than 6 KB (largest empty PDF file is 5 KB)
             IEnumerable<FileInfo> smallFiles = files.Where(file => file.Length < 6 * 1024);
 
             // Delete each small file
             foreach (FileInfo file in smallFiles)
             {
-                pdfName = file.Name.Split('_')[1];
+                string pdfName = file.Name.Split('_')[1];
                 pdfName = pdfName.Split('.')[0];
 
                 Console.WriteLine($"File '{file.Name}' removed from '{directoryPath}' reason: empty PDF(size: {file.Length} bytes).");

@@ -7,7 +7,7 @@ public static class HttpRequestHandler
         try
         {
             // Create the directory if it doesn't exist
-            string directoryPath = "downloadedContent";
+            string directoryPath = "./DownloadedContent";
             Directory.CreateDirectory(directoryPath);
 
             // Combine the directory path and file name

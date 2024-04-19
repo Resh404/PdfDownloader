@@ -6,6 +6,7 @@ string filePathEditMe = "./EditMe.txt";
 string filePathMyExcelFile;
 string filePathExcelSheetName;
 
+// Read file path for Excel file and Excel sheet name from EditMe.txt
 using (StreamReader reader = new StreamReader(filePathEditMe))
 {
     filePathMyExcelFile = reader.ReadLine();
@@ -18,6 +19,7 @@ using (StreamReader reader = new StreamReader(filePathEditMe))
     }
 }
 
+// Read the contents of the Excel file
 var (ids, links1, links2) =
     MyExcelReader.ReadMyExcelFile(filePathMyExcelFile.Trim(), filePathExcelSheetName.Trim());
 
@@ -25,8 +27,9 @@ var (ids, links1, links2) =
 // links1 = links1.Take(25).ToList();
 // links2 = links2.Take(25).ToList();
 
-await PdfToDownload.DownloadPdfOrHtmlAsync(ids, links1, links2);
-DownloadedContentFiltering.RemoveSmallFiles("./downloadedContent");
+// Download PDF and filter empty pdf files
+await PdfToDownload.DownloadPdfAsync(ids, links1, links2);
+DownloadedContentFiltering.RemoveEmptyPdfFiles("./DownloadedContent");
 
 // Wait for user input before exiting
 Console.WriteLine("Press any key to exit...");

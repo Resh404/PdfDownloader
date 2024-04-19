@@ -36,13 +36,12 @@ namespace PdfGetter
                 string downloadStatusReportPath = "./DownloadReport.json";
 
                 // Read the JSON file into a list of records
-                List<DownloadRecord> records = JsonConvert.DeserializeObject<List<DownloadRecord>>(File.ReadAllText(downloadStatusReportPath));
+                List<DownloadRecord> records =
+                    JsonConvert.DeserializeObject<List<DownloadRecord>>(File.ReadAllText(downloadStatusReportPath));
 
                 // Find the record with the specified ID
-                var recordToUpdate = records.FirstOrDefault(record =>
-                {
-                    return string.Equals(record.ID, idToReplace.Trim(), StringComparison.CurrentCultureIgnoreCase);
-                });
+                var recordToUpdate = records.First(record =>
+                    string.Equals(record.ID, idToReplace.Trim(), StringComparison.CurrentCultureIgnoreCase));
 
                 if (recordToUpdate != null)
                 {

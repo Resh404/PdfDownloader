@@ -28,3 +28,5 @@ A
 DownloadRecord.cs,0\3\035dd7489030745a9f933edf079d96b64d816bfe
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+H
+main/DownloadReport.json,d\f\df0c314c4f1fa37f1ac1869191db702504b1f702
